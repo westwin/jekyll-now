@@ -17,6 +17,10 @@ date: "2017-01-22 11:17:21 +0800"
 
 # OpenShift Origin install docker-engine
 
+***This will not work, please ignore below steps as origin-node rpm depedens on docker rpm***
+
+***going to delete this post***
+
 Openshift origin is using docker rather than docker-engine.  
 If you want to use docker-engine latest version in openshift, you need some modifications for ansible scripts.
 
@@ -52,3 +56,5 @@ docker_version="1.13.0"
 ```
 
 Then start your ansible installation.
+
+***But, it will fail to install origin-node as the rpm depedends on docker rpm***
