@@ -17,8 +17,7 @@ date: "2017-01-22 11:17:21 +0800"
 
 # OpenShift Origin install docker-engine
 
-***NOTE: This ONLY works for containerized install method, and does NOT work for default RPM based install method, as openshift origin rpm depedens on docker ***
-
+***NOTE: This ONLY works for containerized install method, and does NOT work for default RPM based install method, as openshift origin rpm depedens on docker***
 
 Openshift origin is using docker rather than docker-engine.  
 If you want to use docker-engine latest version in openshift, you need some modifications for ansible scripts.
