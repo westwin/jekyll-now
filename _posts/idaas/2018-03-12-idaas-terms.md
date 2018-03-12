@@ -29,7 +29,7 @@ Identity as a Service的基本概念
 3. Sync
     * Sync Policy
       * Attribute Mapping Policy
-      ＊ Conflict Policy
+      * Conflict Policy
           * Overwrite
           * Ignore
           * Account Linking
