@@ -2,7 +2,7 @@
 layout: post
 title: "IDaaS Terms"
 permalink: /idaas/terms/
-categories: idaas
+categories: IDaaS
 date: "2018-03-12 21:40:21 +0800"
 ---
 
