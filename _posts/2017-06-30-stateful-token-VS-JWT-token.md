@@ -1,18 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Stateless JWT Token](#stateless-jwt-token)
-- [Stateful Token](#stateful-token)
-- [Design Consideration](#design-consideration)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ---
 layout: post
 title: "Stateful Token VS Stateless JWT Token"
+categories: Tech
 date: "2017-06-30 22:59:21 +0800"
 ---
+
+* TOC
+{:toc}
+Stateful Token VS Stateless JWT Token
 
 ## Stateless JWT Token
 
