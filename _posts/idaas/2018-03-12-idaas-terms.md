@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IDaaS-Terms"
+title: "IDaaS Terms"
 permalink: /idaas/terms/
 categories: idaas
 date: "2018-03-12 21:40:21 +0800"
@@ -8,7 +8,7 @@ date: "2018-03-12 21:40:21 +0800"
 
 * TOC
 {:toc}
-Identity as a Service - Terms
+Terms of Identity as a Service
 
 # IDaas Terms
 
