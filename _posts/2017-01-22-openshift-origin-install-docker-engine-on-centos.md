@@ -1,19 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [OpenShift Origin install docker-engine](#openshift-origin-install-docker-engine)
-  - [Mods for ansible to install docker-engine](#mods-for-ansible-to-install-docker-engine)
-  - [Manually Add docker-engine yum repository to master(s)/node(s)](#manually-add-docker-engine-yum-repository-to-mastersnodes)
-  - [Specify ansible hosts to use latest docker-engine](#specify-ansible-hosts-to-use-latest-docker-engine)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ---
 layout: post
 title: "OpenShift Origin install docker-engine on CentOS"
+categories: [Tech, PaaS]
 date: "2017-01-22 11:17:21 +0800"
 ---
+
+* TOC
+{:toc}
+OpenShift Origin Installation
 
 # OpenShift Origin install docker-engine
 
