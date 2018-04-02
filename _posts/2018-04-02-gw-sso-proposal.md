@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "企业移动门户-基础组件"
+title: "企业移动门户-Gateway和SSO的集成"
 permalink: /sso-gw-integration/
 categories: Enterprise-Portal
 date: "2018-04-02 17:48:21 +0800"
@@ -8,7 +8,7 @@ date: "2018-04-02 17:48:21 +0800"
 
 * TOC
 {:toc}
-企业移动门户基础组件: 安全接入网关和单点登录的集成方案
+企业移动门户-Gateway和SSO的集成: 安全接入网关和单点登录的集成方案
 
 # GW && SSO Integration Proposal
 
