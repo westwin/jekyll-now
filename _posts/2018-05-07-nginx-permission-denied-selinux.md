@@ -15,7 +15,7 @@ selinux: Nginx file permission denied
 CentOS下，装了一个全新的nginx, 把一些文件放到缺省的Document_Root目录下(/usr/share/nginx/html), 从浏览器端无法访问，nginx日志
 总是报 **file permission denied**.
 
-一开始以为是nginx进程的运行用户nginx没有权限访问那些文件，尝试chmod仍然无效. 
+一开始以为是nginx进程的运行用户nginx没有权限访问那些文件，尝试chmod仍然无效.
 后来突然想起可能和 **selinux** 相关
 
 ## selinux
