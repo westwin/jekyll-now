@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-I am a programmer !
+Lead Yourself
 
 ### More Information
 
