@@ -2,7 +2,7 @@
 layout: post
 title: "tty录制屏幕"
 permalink: /ttyrec-ttygif/
-categories: 
+categories: linux cli
 date: "2018-03-01 13:52:21 +0800"
 ---
 
