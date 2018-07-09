@@ -21,3 +21,4 @@ tty录制屏幕
     * [ttyrec](http://0xcc.net/ttyrec/)
     * [ttyrec fix on centos](https://github.com/mjording/ttyrec/issues/3)
 6. ![Demo](/images/tty.gif)
+7. 更高级的工具见[asciinema](https://asciinema.org/)
