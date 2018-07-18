@@ -52,7 +52,7 @@ PAM编程参考: [The Linux-PAM System Administrators' Guide](http://www.linux-p
 
 ## 坑
 
-* 貌似nslcd的配置文件ldap的uri不支持自定义端口号(比如uri: ldap://10.31.196.200.1389/， 总是报Can't contact LDAP server: Transport endpoint is not connected)
+* 貌似nslcd的配置文件ldap的uri不支持自定义端口号(比如uri: ldap://10.31.196.200:1389/， 总是报Can't contact LDAP server: Transport endpoint is not connected)
 
 ## 思考
 
