@@ -29,6 +29,7 @@ SSO最常用的用户场景是各种应用之间的SSO, 尤其是基于浏览器
 1. ldap server
    * 要求用户具有objectclass: posixAccount, shadowAccount
    * 要求用户组具有objectclass: posixGroup
+   * 示例: ![posix-shadow-account](/images/posix-shadow-account.png)
 
 2. /etc/pam.d/
    * pam_ldap.so
