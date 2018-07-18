@@ -50,6 +50,10 @@ google关键字 PAM LDAP
 
 PAM编程参考: [The Linux-PAM System Administrators' Guide](http://www.linux-pam.org/Linux-PAM-html/Linux-PAM_SAG.html)
 
+## 坑
+
+* 貌似nslcd的配置文件ldap的uri不支持自定义端口号(比如uri: ldap://10.31.196.200.1389/， 总是报Can't contact LDAP server: Transport endpoint is not connected)
+
 ## 思考
 
 基于PAM编程接口，理论上我们可以扩展出基于OAuth2/OIDC协议的支持, TBD
