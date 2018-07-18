@@ -2,7 +2,7 @@
 layout: post
 title: "True SSO - PAM & LDAP"
 permalink: /true-sso-pam-ldap/
-categories: template
+categories: sso pam ldap
 date: "2018-07-18 10:34:21 +0800"
 ---
 
