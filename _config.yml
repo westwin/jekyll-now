@@ -25,11 +25,11 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: westwin
   twitter: 
   stackoverflow: "users/782409/feng-xi"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
+  rss: westwin
 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
