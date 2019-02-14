@@ -2,7 +2,7 @@
 layout: post
 title: "Password Storage Scheme"
 permalink: /password-storage-scheme/
-categories: token,sso 
+categories: ldap,password,opendj
 date: "2019-02-14 14:59:21 +0800"
 ---
 
