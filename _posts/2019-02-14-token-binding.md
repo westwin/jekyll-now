@@ -2,7 +2,7 @@
 layout: post
 title: "Token Binding"
 permalink: /token-binding/
-categories: template
+categories: token,sso 
 date: "2019-02-14 11:33:21 +0800"
 ---
 
