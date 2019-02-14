@@ -2,7 +2,7 @@
 layout: post
 title: "Controlling startup order in Docker Compose"
 permalink: /startup-order-in-docker-compose/
-categories: token,sso 
+categories: docker
 date: "2019-02-14 12:26:21 +0800"
 ---
 
