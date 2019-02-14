@@ -46,6 +46,6 @@ mongodb有基于[Capped Collection/Tailable Cursor的Publish/Subscribe机制](ht
 
 3. 每个微服务运行实例, 通过tailable cursor以<span style="color:red">阻塞/循环</span>的机制，<span style="color:red">watch</span> cache_events的变更通知
 
-4. 当变更通知到来时，触发对应的"action", 去更新每个运行实例的LRU缓存(或者简单粗暴的把对应的entry给删掉)
+4. 当变更通知到来时，触发对应的"action", 去更新每个运行实例的LRU缓存(或者简单粗暴的把内存中对应的entry给删掉)
 
 5. 重复上述步骤3，不停的监听变更通知
