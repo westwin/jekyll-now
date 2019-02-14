@@ -16,7 +16,10 @@ Relocatable RPM
 
 查看一个RPM是否是relocatable的可以:
 
-rpm -qpi <package_file.rpm> | grep Relocations
+rpm -qpi package_file.rpm | grep Relocations
+
+或
+rpm -qi installed_pkg_name | grep Relocations
 
 比如:
 
