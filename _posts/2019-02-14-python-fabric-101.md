@@ -25,10 +25,10 @@ python fabric的简单介绍, 详细请参考[官网](http://www.fabric.org)
     * **远程目标机器上执行各种命令**，包括sudo命令.
       * 可以在远程机器上执行各种Linux基本命令.
 
-        ```python
+        ~~~python
         // mkdir on remote server.
         run('mkdir /tmp/blabla')
-        ```
+        ~~~
 
       * 可以上传文件至远程目标机器
 
