@@ -2,7 +2,7 @@
 layout: post
 title: "企业移动门户-基础组件"
 permalink: /enterprise-mobile-portal-must/
-categories: Enterprise-Portal
+categories: sso gateway
 date: "2018-03-01 13:52:21 +0800"
 ---
 

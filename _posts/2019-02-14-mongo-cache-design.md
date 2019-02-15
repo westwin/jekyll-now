@@ -2,7 +2,7 @@
 layout: post
 title: "Cache Proposal with Mongo"
 permalink: /cache-proposal-with-mongo/
-categories: mongo,tailable
+categories: mongo
 date: "2019-02-14 15:45:21 +0800"
 ---
 

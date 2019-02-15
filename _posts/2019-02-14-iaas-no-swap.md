@@ -2,7 +2,7 @@
 layout: post
 title: "IaaS下的虚拟机通常没有swap"
 permalink: /iaas-no-swap/
-categories: iaas,swap,java
+categories: iaas swap java
 date: "2019-02-14 12:07:21 +0800"
 ---
 

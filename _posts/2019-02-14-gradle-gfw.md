@@ -2,7 +2,7 @@
 layout: post
 title: "Gradle GFW"
 permalink: /gradle-gfw/
-categories: gfw,gradle
+categories: gfw gradle
 date: "2019-02-14 12:00:21 +0800"
 ---
 

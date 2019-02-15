@@ -2,7 +2,7 @@
 layout: post
 title: "Designing the DIT"
 permalink: /designing-dit/
-categories: ldap,dit
+categories: ldap dit
 date: "2019-02-14 14:50:21 +0800"
 ---
 

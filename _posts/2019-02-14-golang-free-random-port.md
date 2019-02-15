@@ -2,7 +2,7 @@
 layout: post
 title: "Golang Free Port"
 permalink: /golang-free-port/
-categories: golang,port0
+categories: golang network
 date: "2019-02-14 15:28:21 +0800"
 ---
 
