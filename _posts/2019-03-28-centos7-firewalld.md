@@ -1,60 +1,68 @@
 ---
 layout: post
-title: "cent7 下用firewall-cmd命令来管理防火墙"
-permalink: /centos-firewall-cmd/
-categories: firewall-cmd 
-date: "2019-03-28 14:08:21 +0800"
+title: "cent7下安装ss"
+permalink: /centos-install-ss/
+categories: centos
+date: "2019-03-28 14:18:21 +0800"
 ---
 
 * TOC
 {:toc}
-cent7 下用firewall-cmd命令来管理防火墙
+cent7 install ss
 
-## 背景
+## python ss
 
-Cent 6.x中用来管理防火墙的iptables在cent7中已经被firewalld来代替，取而代之的命令行管理工具为firewall-cmd
+cent7里有个python版本的ss, 所以
 
-通常，我们的需求比较简单， 也就是说启用或禁用某些端口(比如80,443,8080,8085)
-
-## 可选方法
-
-那么，我们的需求就转化为 如何用firewall-cmd来启用这些端口.
-
-1. 方法1: 直接启用端口
+1. 需要先安装python相关的一些东西
 
     ```bash
-    # enable tcp port 8085
-    sudo firewall-cmd --zone=public --permanent --add-port=8085/tcp
+    sudo yum install python-setuptools && sudo easy_install pip
+    sudo pip install shadowsocks
     ```
 
-    注：上述命令行中的--zone=public代表的是cent7中缺省打开的zone是public。 zone的概念也是在cent7中新引入的，详细参考最下面的链接。
-2. 方法2: 添加自定义的firewalld的service, 在service里映射这些端口号，然后启用service
+2. 配置ss
 
-```bash
-# define a firewalld service for my service
-sudo vi /etc/firewalld/services/my_service.xml
- 
-<?xml version="1.0" encoding="utf-8"?>
-<service>
-  <short>my-service</short>
-  <description>My Micro Service.</description>
-  <port protocol="tcp" port="8085"/>
-</service>
- 
-# reload this new service
-sudo firewall-cmd --reload
- 
-# enable this service
-sudo firewall-cmd --zone=public --add-service=my-service
-```
+    ```bash
+    sudo mkdir -p /etc/shadowsocks
+    sudo vi /etc/shadowsocks/config.json
+    # 添加你的实际配置
+    ```
 
-3. 方法3: 自定义一个zone。 比较麻烦，不做介绍了。
+3. 开机自启shadowsocks
 
-方法2比较优雅，又相对简单
+    ```bash
+    sudo vi /etc/systemd/system/shadowsocks-server.service
+    
+    #input below contents
+    [Unit]
+    Description=Shadowsocks Server
+    After=network.target
+    
+    [Service]
+    Type=forking
+    PIDFile=/run/shadowsocks/server.pid
+    PermissionsStartOnly=true
+    ExecStartPre=/bin/mkdir -p /run/shadowsocks
+    ExecStartPre=/bin/chown root:root /run/shadowsocks
+    ExecStart=/usr/bin/sslocal --pid-file /var/run/shadowsocks/server.pid -c /etc/shadowsocks/config.json -d start
+    Restart=on-abort
+    User=root
+    Group=root
+    UMask=0027
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
-修改想要立即生效，可以运行 ```sudo firewall-cmd --reload``` 
+    注意: 这里有个坑。网上的文章说用/usr/bin/ssserver来启动我们的这个代理，实际上根本起不来，ExecStart那用的是/usr/bin/sslocal就可以启动了。。
 
+    ```bash
+    sudo systemctl start shadowsocks-server.service
+    sudo systemctl enable shadowsocks-server.service
+    ```
+4. 浏览器安装proxy插件，配置gfwlist
 
-## 参考
+    ff下可以用插件foxyproxy, chrome下用SwitchyOmega , 这个就不说了，网上一大把教程.
 
-* [SetUp Firewalld on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+    貌似linux下的shadowsocks不支持全局代理？所以需要在浏览器里配代理，默认1080端口socks5
