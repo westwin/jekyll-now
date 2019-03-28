@@ -1,45 +1,68 @@
 ---
 layout: post
-title: "MySQL命令行下用密码连接数据库的常用做法"
-permalink: /mysql-option-file/
-categories: mysql 
-date: "2019-03-28 13:53:21 +0800"
+title: "cent7下安装ss"
+permalink: /centos-install-ss/
+categories: centos
+date: "2019-03-28 14:18:21 +0800"
 ---
 
 * TOC
 {:toc}
-MySQL命令行下用密码连接数据库的常用做法
+cent7 install ss
 
-## 背景
+## python ss
 
-在日常的开发，测试，部署过程中，我们经常需要通过命令行连接MySQL数据库，而连接往往需要密码.
+cent7里有个python版本的ss, 所以
 
-那么存在一个问题，如何更安全的保护这个密码?
+1. 需要先安装python相关的一些东西
 
-比如在实际一个项目中用到了一个叫erp的数据库, 连接连接密码是mypassword
+    ```bash
+    sudo yum install python-setuptools && sudo easy_install pip
+    sudo pip install shadowsocks
+    ```
 
-## 常用做法
+2. 配置ss
 
-* 把密码作为参数传入命令行
+    ```bash
+    sudo mkdir -p /etc/shadowsocks
+    sudo vi /etc/shadowsocks/config.json
+    # 添加你的实际配置
+    ```
 
-    ```mysql -udbuser -pmypassword erp```
+3. 开机自启shadowsocks
 
-    直接把密码作为命令行的一个参数来使用，这样通过history命令查看历史很容易就找到密码了，所以这种做法也是最不推荐的做法，
+    ```bash
+    sudo vi /etc/systemd/system/shadowsocks-server.service
+    
+    #input below contents
+    [Unit]
+    Description=Shadowsocks Server
+    After=network.target
+    
+    [Service]
+    Type=forking
+    PIDFile=/run/shadowsocks/server.pid
+    PermissionsStartOnly=true
+    ExecStartPre=/bin/mkdir -p /run/shadowsocks
+    ExecStartPre=/bin/chown root:root /run/shadowsocks
+    ExecStart=/usr/bin/sslocal --pid-file /var/run/shadowsocks/server.pid -c /etc/shadowsocks/config.json -d start
+    Restart=on-abort
+    User=root
+    Group=root
+    UMask=0027
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
-    运行完这条命令之后，MySQL自己也会友情提示 Warning: Using a password on the command line interface can be insecure.
-* 用户交互方式，手动输入密码
+    注意: 这里有个坑。网上的文章说用/usr/bin/ssserver来启动我们的这个代理，实际上根本起不来，ExecStart那用的是/usr/bin/sslocal就可以启动了。。
 
-    通过用户交互的方式，让用户输入密码, mysql -udbuser -p  , 但是这么做对一些自动化脚本不太友好.
+    ```bash
+    sudo systemctl start shadowsocks-server.service
+    sudo systemctl enable shadowsocks-server.service
+    ```
+4. 浏览器安装proxy插件，配置gfwlist
 
-## 推荐做法
+    ff下可以用插件foxyproxy, chrome下用SwitchyOmega , 这个就不说了，网上一大把教程.
 
-MySQL提供了一个所谓的option file，在这个option-file按照固定的格式把连接MySQL用到的密码等参数放进去，比如:
-
-```conf
-[mysql]
-password=mypassword
-```
-
-可以对这个文件做一些访问权限等的限制,比如chmod 600. 用时生成这个文件，用完删掉...
-
-然后连接mysql时，用 ```mysql --defaults-file=<option-file-dir>```, 具体可以参考 [Using Option Files](http://dev.mysql.com/doc/refman/5.7/en/option-files.html)
+    貌似linux下的shadowsocks不支持全局代理？所以需要在浏览器里配代理，默认1080端口socks5
