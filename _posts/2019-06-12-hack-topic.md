@@ -30,12 +30,12 @@ Identity Hub作为一个承上启下的桥梁, 上可以对接多个认证源，
 
 有**两个大目标, 每个大目标又会有一些小目标(亮点功能)**. 如下:
 
-1. 大目标: 用企业微信，通过扫码的方式来登录Yufu-Portal
+1. 大目标: 用企业微信，通过扫码的方式来登录Yufu-Portal. 参见[集成文档](https://work.weixin.qq.com/api/doc#90000/90135/90988)
     * 亮点1: JIT, zhangsan用企业微信登录Yufu-Portal成功后, zhangsan的个人信息被存储(或更新)到Yufu-UD中
     * 亮点2: 权限映射, 企业微信的管理员->Yufu的管理员, 企业微信的普通用户->Yufu的普通用户
     * 亮点3： 给企业微信的登录额外加上Yufu-MFA(给没有MFA功能的认证源添加上Yufu-MFA功能)
 
-2. 大目标: 用GitHub来登录Yufu-Portal
+2. 大目标: 用GitHub来登录Yufu-Portal, 参见[集成文档](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
     * 亮点1: 第三方SP发起SP Initiated SSO可以指定使用GitHub来登录
 
 另: 上面俩大目标都有一个共同的亮点目标: 给没有MFA功能的认证源添加上Yufu-MFA功能
